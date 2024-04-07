@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/black"
+        app:title="@string/app_name"
+        app:titleTextColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/carImg"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:src="@drawable/bmw_car_img"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/toolbar"/>
+
+    <EditText
+        android:id="@+id/editTextCarModel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter car model"
+        android:inputType="text"
+        android:layout_below="@+id/carImg"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/editTextCarMake"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextCarModel"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Enter car make"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/editTextCarYear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextCarMake"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Enter car year"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/editTextCarLicensePlate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextCarYear"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Enter license plate"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/editTextCarPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextCarLicensePlate"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Enter car price"
+        android:inputType="number|numberDecimal"/>
+
+    <Switch
+        android:id="@+id/availabilitySwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextCarPrice"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:switchMinWidth="70dp"
+        android:text="Available?"
+        android:textSize="20sp"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/availabilitySwitch">
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextCarPrice"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="32dp"
+            android:text="Save"
+            android:backgroundTint="@color/black"/>
+        <Button
+            android:id="@+id/buttonDelete"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextCarPrice"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:backgroundTint="@color/red"
+            android:text="Delete" />
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

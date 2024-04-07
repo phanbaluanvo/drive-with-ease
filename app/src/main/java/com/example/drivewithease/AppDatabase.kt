@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.drivewithease.adapter.BookingHistoryAdapter
 import com.example.drivewithease.dao.AdminDao
 import com.example.drivewithease.dao.BookingHistoryDao
 import com.example.drivewithease.dao.CarDao
@@ -13,7 +14,7 @@ import com.example.drivewithease.entity.BookingHistory
 import com.example.drivewithease.entity.Car
 import com.example.drivewithease.entity.User
 
-@Database(entities = [User::class, Car::class, Admin::class, BookingHistory::class], version = 1, exportSchema = false)
+@Database(entities = [User::class, Car::class, Admin::class, BookingHistory::class], version = 6, exportSchema = false)
 abstract class AppDatabase : RoomDatabase(){
     abstract fun userDao() : UserDao;
     abstract fun adminDao() : AdminDao;
@@ -30,7 +31,8 @@ abstract class AppDatabase : RoomDatabase(){
                     context.applicationContext,
                     AppDatabase::class.java,
                     "drive_with_ease_database"
-                ).allowMainThreadQueries().build()
+                ).fallbackToDestructiveMigration()
+                    .allowMainThreadQueries().build()
                 INSTANCE = instance
                 instance
             }

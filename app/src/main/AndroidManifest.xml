@@ -13,6 +13,25 @@
         android:theme="@style/Theme.DriveWithEase"
         tools:targetApi="31">
         <activity
+            android:name=".UserProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BookingDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CarBookingActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".CarCatalogueActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CarModifyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminManagementActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -21,6 +40,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Registration"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/black"
+            app:title="@string/app_name"
+            app:titleTextColor="@android:color/white"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Car Details -->
+        <TextView
+            android:id="@+id/textViewCarDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Car Details"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_below="@+id/toolbar"/>
+
+        <ImageView
+            android:id="@+id/carImg"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:src="@drawable/bmw_car_img"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/textViewCarDetails"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/carImg"
+            android:id="@+id/carModelPlaceholder"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp">
+            <TextView
+                android:id="@+id/carModelHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:text="Model: "
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textCarModel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="BMW XSports 4"
+                android:textSize="18sp"
+                android:gravity="end" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/carModelPlaceholder"
+            android:id="@+id/carMakePlaceholder"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp">
+            <TextView
+                android:id="@+id/carMakeHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:text="Make: "
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewCarMake"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="BMW"
+                android:textSize="18sp"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/carMakePlaceholder"
+            android:id="@+id/carYearPlaceholder"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp">
+            <TextView
+                android:id="@+id/carYearHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:text="Year: "
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textCarYear"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="2019"
+                android:textSize="18sp"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/carYearPlaceholder"
+            android:id="@+id/carLicensePlatePlaceholder"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp">
+            <TextView
+                android:id="@+id/carLicensePlateHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:text="License Plate: "
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textCarLicensePlate"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="2019"
+                android:textSize="18sp"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/carLicensePlatePlaceholder"
+            android:id="@+id/carPricePlaceholder"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp">
+            <TextView
+                android:id="@+id/carPriceHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:text="Price per day: "
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textCarPrice"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="200.00"
+                android:textSize="18sp"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <!-- Rental Dates -->
+        <TextView
+            android:id="@+id/textViewRentalDates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rental Dates"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_below="@id/carPricePlaceholder"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"/>
+
+        <TextView
+            android:id="@+id/textViewPickupDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pickup Date"
+            android:layout_below="@id/textViewRentalDates"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"/>
+
+        <EditText
+            android:id="@+id/editTextPickupDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewPickupDate"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"/>
+
+        <TextView
+            android:id="@+id/textViewDropoffDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Drop-off Date"
+            android:layout_below="@id/editTextPickupDate"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"/>
+
+        <EditText
+            android:id="@+id/editTextDropoffDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewDropoffDate"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"/>
+
+        <!-- Total Cost -->
+        <TextView
+            android:id="@+id/textViewTotalCost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total Cost"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_below="@id/editTextDropoffDate"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewTotalCost"
+            android:id="@+id/rentalTotalPlaceholder"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp">
+            <TextView
+                android:id="@+id/rentalTotalHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:text="Price per day: "
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textRentalTotal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="0.00"
+                android:textSize="18sp"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/taxHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rentalTotalPlaceholder"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="32dp"
+            android:text="Tax:"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/taxHeading"
+            android:id="@+id/gstPlaceHolder"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp">
+            <TextView
+                android:id="@+id/gstTotalHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:text="GST (5%): "
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/gstTotal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="0.00"
+                android:textSize="18sp"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gstPlaceHolder"
+            android:id="@+id/pstPlaceHolder"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp">
+            <TextView
+                android:id="@+id/pstTotalHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:text="PST (7%): "
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/pstTotal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="0.00"
+                android:textSize="18sp"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pstPlaceHolder"
+            android:id="@+id/pvrtPlaceHolder"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp">
+            <TextView
+                android:id="@+id/pvrtTotalHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:text="PVRT ($1.50/day): "
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/pvrtTotal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="0.00"
+                android:textSize="18sp"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pvrtPlaceHolder"
+            android:id="@+id/pvrtTaxPlaceHolder"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp">
+            <TextView
+                android:id="@+id/pvrtTaxTotalHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:text="PVRT Tax (5%): "
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/pvrtTaxTotal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="0.00"
+                android:textSize="18sp"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pvrtTaxPlaceHolder"
+            android:id="@+id/totalAmoutPlaceholder"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp">
+            <TextView
+                android:id="@+id/totalAmoutHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:text="Total: "
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/totalAmount"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="0.00"
+                android:textSize="18sp"
+                android:gravity="end"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Pickup/Drop-off Instructions -->
+        <TextView
+            android:id="@+id/textViewInstructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pickup/Drop-off Instructions"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_below="@id/totalAmoutPlaceholder"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"/>
+
+        <EditText
+            android:id="@+id/editTextInstructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewInstructions"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:gravity="top"/>
+
+        <!-- Book Button -->
+        <Button
+            android:id="@+id/buttonBook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Book"
+            android:layout_below="@id/editTextInstructions"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/black"/>
+
+    </RelativeLayout>
+</ScrollView>
+

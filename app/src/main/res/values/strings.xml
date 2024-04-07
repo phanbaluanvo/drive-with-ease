@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">DriveWithEase</string>
+    <string name="modifyBtn">Modify</string>
+    <string name="headingListCars">Your Cars</string>
+    <string name="headingListBooking">Booking History</string>
+    <string name="selectBtn">Select</string>
 </resources>

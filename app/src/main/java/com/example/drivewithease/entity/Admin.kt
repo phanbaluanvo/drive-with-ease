@@ -4,10 +4,11 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "admins")
-class Admin(
-    id: Int,
-    name: String,
-    username: String,
-    email: String,
-    password: String
-) : User(id, name, username, email, password)
+open class Admin(
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0,
+    val name: String,
+    val username: String,
+    val email: String,
+    val password: String
+)

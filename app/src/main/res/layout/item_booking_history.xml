@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="16dp"
+    android:id="@+id/bookingCardView">
+
+    <GridLayout
+        xmlns:android1="http://schemas.android.com/apk/res/android"
+        android1:layout_width="match_parent"
+        android1:layout_height="wrap_content"
+        android1:columnCount="4"
+        android1:rowCount="1">
+
+        <TextView
+            android1:id="@+id/startDate"
+            android1:layout_width="0dp"
+            android1:layout_height="wrap_content"
+            android1:layout_columnWeight="1"
+            android1:text="4/3/2024"
+            android1:textSize="6pt"
+            android1:textAlignment="center" />
+
+        <TextView
+            android1:id="@+id/endDate"
+            android1:layout_width="0dp"
+            android1:layout_height="wrap_content"
+            android1:layout_columnWeight="1"
+            android1:text="4/10/2024"
+            android1:textAlignment="center"
+            android1:textSize="6pt" />
+
+        <TextView
+            android1:id="@+id/customerName"
+            android1:layout_width="0dp"
+            android1:layout_height="wrap_content"
+            android1:layout_columnWeight="1"
+            android1:text="Bill"
+            android1:textAlignment="center"
+            android1:textSize="6pt"/>
+
+        <TextView
+            android1:id="@+id/totalPrice"
+            android1:layout_width="0dp"
+            android1:layout_height="wrap_content"
+            android1:layout_columnWeight="1"
+            android1:text="Vancouver"
+            android1:textAlignment="center"
+            android1:textSize="6pt" />
+    </GridLayout>
+</androidx.cardview.widget.CardView>

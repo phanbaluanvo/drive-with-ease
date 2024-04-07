@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
+    android:id="@+id/registration"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -16,67 +16,77 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView_logo"
+        android:id="@+id/imageView_logo_registration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/dwe_logo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp"
-        />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="48dp"/>
 
     <EditText
-        android:id="@+id/editText_username"
+        android:id="@+id/editText_name_registration"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginTop="32dp"
-        android:hint="Username"
-        android:inputType="textEmailAddress"
+        android:hint="Name"
+        android:inputType="text"
         android:layout_centerInParent="true" />
 
     <EditText
-        android:id="@+id/editText_password"
+        android:id="@+id/editText_username_registration"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editText_username"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="16dp"
+        android:hint="Username"
+        android:inputType="text"
+        android:layout_below="@+id/editText_name_registration" />
+
+    <EditText
+        android:id="@+id/editText_email_registration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="16dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/editText_username_registration"/>
+
+    <EditText
+        android:id="@+id/editText_password_registration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="16dp"
         android:hint="Password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:layout_below="@+id/editText_email_registration"/>
 
     <Button
-        android:id="@+id/button_login"
+        android:id="@+id/button_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editText_password"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="32dp"
-        android:backgroundTint="@color/black"
-        android:text="Login" />
+        android:text="Register"
+        android:layout_below="@+id/editText_password_registration"
+        android:backgroundTint="@color/black"/>
 
     <TextView
-        android:id="@+id/textView_signup"
+        android:id="@+id/textView_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/button_login"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:text="Don't have an account? Sign Up"
-        android:textColor="#4E79E6"
-        android:onClick="goToRegistration"
-        />
+        android:layout_centerHorizontal="true"
+        android:text="Already have an account? Login"
+        android:textColor="#418EE1"
+        android:onClick="goToLogin"
+        android:layout_below="@+id/button_register"/>
 
-    <Button
-        android:id="@+id/buttonNavigate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go to Admin Management"
-        android:layout_below="@id/textView_signup"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/black" />
 
 </RelativeLayout>

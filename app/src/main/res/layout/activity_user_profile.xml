@@ -1,0 +1,314 @@
+<!-- activity_admin_management.xml -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        tools:context=".UserProfileActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/black"
+            android:clipToPadding="false"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/app_name"
+            app:titleTextColor="@android:color/white" />
+
+        <!-- Horizontal RecyclerView for car list -->
+        <TextView
+            android:id="@+id/headingListCars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Your Information"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/customerDetailHeading"
+            android:id="@+id/customerDetail"
+            android:layout_marginTop="8dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/customerNamePlaceholder"
+                android:orientation="horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp">
+                <TextView
+                    android:id="@+id/customerNameHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:text="Name: "
+                    android:textSize="18sp"
+                    android:minWidth="90dp"/>
+
+                <EditText
+                    android:id="@+id/customerNameInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="18sp"
+                    android:gravity="end" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/customerEmailPlaceholder"
+                android:layout_below="@+id/customerNamePlaceholder"
+                android:orientation="horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp">
+                <TextView
+                    android:id="@+id/customerEmailHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:text="Email: "
+                    android:textSize="18sp"
+                    android:minWidth="90dp"/>
+
+                <EditText
+                    android:id="@+id/customerEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="18sp"
+                    android:gravity="end" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/customerUsernamePlaceholder"
+                android:layout_below="@+id/customerEmailPlaceholder"
+                android:orientation="horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp">
+                <TextView
+                    android:id="@+id/customerUsernameHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:text="Username: "
+                    android:textSize="18sp"
+                    android:minWidth="90dp"/>
+
+                <EditText
+                    android:id="@+id/customerUsername"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="18sp"
+                    android:gravity="end" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/customerPasswordPlaceholder"
+                android:layout_below="@+id/customerUsernamePlaceholder"
+                android:orientation="horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp">
+                <TextView
+                    android:id="@+id/customerPasswordHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:text="Password: "
+                    android:textSize="18sp"
+                    android:minWidth="90dp"
+                    />
+
+                <EditText
+                    android:id="@+id/customerPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="18sp"
+                    android:gravity="end"
+                    android:inputType="textPassword"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/buttonSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Save"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/black"
+                android:layout_below="@id/customerPasswordPlaceholder"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/headingListBooking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current Booking"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"/>
+
+        <!-- Vertical RecyclerView for booking history -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:cardBackgroundColor="#759FC1"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true"
+            app:contentPadding="16dp">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="4"
+                android:rowCount="1">
+
+                <TextView
+                    android:id="@+id/startDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Start Date"
+                    android:textAlignment="center"
+                    android:textSize="7pt"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/endDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="End Date"
+                    android:textAlignment="center"
+                    android:textSize="7pt"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/carModel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Car Model"
+                    android:textAlignment="center"
+                    android:textSize="7pt"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="3"
+                    android:layout_columnWeight="1"
+                    android:text="Total"
+                    android:textAlignment="center"
+                    android:textSize="7pt"
+                    android:textStyle="bold" />
+            </GridLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCurrentBooking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"/>
+
+        <TextView
+            android:id="@+id/headingPastBooking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Past Booking"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:cardBackgroundColor="#759FC1"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true"
+            app:contentPadding="16dp">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="4"
+                android:rowCount="1">
+
+                <TextView
+                    android:id="@+id/pastStartDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Start Date"
+                    android:textAlignment="center"
+                    android:textSize="7pt"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pastEndDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="End Date"
+                    android:textAlignment="center"
+                    android:textSize="7pt"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pastCarModel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Car Model"
+                    android:textAlignment="center"
+                    android:textSize="7pt"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pastTotal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="3"
+                    android:layout_columnWeight="1"
+                    android:text="Total"
+                    android:textAlignment="center"
+                    android:textSize="7pt"
+                    android:textStyle="bold" />
+            </GridLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPastBooking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"/>
+
+
+    </LinearLayout>
+</ScrollView>

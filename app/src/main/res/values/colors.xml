@@ -2,4 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="red">	#FF0000</color>
+    <color name="green">#00FF00</color>
+    <color name="waiting">#CCB706</color>
+    <color name="confirmed">#129712</color>
+    <color name="cancel">#B5180C</color>
+    <color name="backgroundWaiting">#DDD697</color>
+    <color name="backgroundCancel">#ED8D86</color>
+    <color name="backgroundConfirmed">#89EC8D</color>
+
 </resources>

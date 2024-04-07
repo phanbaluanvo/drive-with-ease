@@ -20,5 +20,7 @@ data class Car(
     @ColumnInfo(name="pricePerDay")
     val pricePerDay: Double,
     @ColumnInfo(name="availabilityStatus")
-    val availabilityStatus: Boolean
+    val availabilityStatus: Boolean,
+    @ColumnInfo(name="imageName")
+    val imageName: String
 )
